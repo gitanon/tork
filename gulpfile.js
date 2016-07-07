@@ -31,11 +31,7 @@ gulp.task('stylus', function () {
   return gulp.src('src/main.styl')
     .pipe(plugins.plumber())
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.stylus({
-      define: {
-        url: resolver()
-      }
-    }))
+    .pipe(plugins.stylus())
     .pipe(plugins.autoprefixer())
     .pipe(plugins.sourcemaps.write('.'))
     .pipe(gulp.dest('dev/css'));
