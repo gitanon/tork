@@ -48,9 +48,10 @@ gulp.task('images', function () {
 });
 
 gulp.task('sprite', ['clean:sprite'], function () {
-  var spriteData = gulp.src('src/**/sprite-*.png').pipe(spritesmith({
+  var spriteData = gulp.src('src/**/sprite*.png').pipe(spritesmith({
     imgName: 'sprite.png',
-    cssName: 'sprite.styl'
+    cssName: 'sprite.styl',
+    imgPath: '../img/sprite.png'
   }));
   spriteData.img.pipe(gulp.dest('dev/img'));
   spriteData.css.pipe(gulp.dest('src/blocks/common'));
@@ -61,9 +62,9 @@ gulp.task('clean:sprite', function() {
 })
 
 gulp.task('develop', ['browserSync'], function () {
-  gulp.watch('src/**/*.{png,jpg}', ['images', reload]);
+  gulp.watch(['src/**/*.{png,jpg}', '!src/**/sprite*.{png,jpg}'], ['images', reload]);
+  gulp.watch('src/**/sprite*.png', ['sprite', reload]);
   gulp.watch('src/**/*.pug', ['pug', reload]);
-  gulp.watch('src/**/sprite-*.png', ['sprite', reload]);
   gulp.watch('src/**/*.styl', ['stylus', reload]);
 });
 

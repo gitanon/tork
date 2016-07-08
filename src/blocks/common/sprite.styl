@@ -1,0 +1,107 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$sprite_bars_name = 'sprite_bars';
+$sprite_bars_x = 0px;
+$sprite_bars_y = 0px;
+$sprite_bars_offset_x = 0px;
+$sprite_bars_offset_y = 0px;
+$sprite_bars_width = 18px;
+$sprite_bars_height = 15px;
+$sprite_bars_total_width = 32px;
+$sprite_bars_total_height = 15px;
+$sprite_bars_image = '../img/sprite.png';
+$sprite_bars = 0px 0px 0px 0px 18px 15px 32px 15px '../img/sprite.png' 'sprite_bars';
+$sprite_search_name = 'sprite_search';
+$sprite_search_x = 18px;
+$sprite_search_y = 0px;
+$sprite_search_offset_x = -18px;
+$sprite_search_offset_y = 0px;
+$sprite_search_width = 14px;
+$sprite_search_height = 14px;
+$sprite_search_total_width = 32px;
+$sprite_search_total_height = 15px;
+$sprite_search_image = '../img/sprite.png';
+$sprite_search = 18px 0px -18px 0px 14px 14px 32px 15px '../img/sprite.png' 'sprite_search';
+$spritesheet_width = 32px;
+$spritesheet_height = 15px;
+$spritesheet_image = '../img/sprite.png';
+$spritesheet_sprites = $sprite_bars $sprite_search;
+$spritesheet = 32px 15px '../img/sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}
