@@ -3,32 +3,19 @@
   color white
   font-family font_opensans
 
-.button_search
-  background dark_1
-  border none
-  cursor pointer
-  padding 22px
-  position absolute
-  right 0
-
-// .icon_button-search
-//   sprite($sprite_search)
-//   background-repeat no-repeat
-
-// .button_search:after,
-// .button_search::after
-//   sprite($sprite_search)
-//   background-repeat no-repeat
-//   position absolute
-//   top 0%
-//   left 0%
-
 .button_buy
   background violet
+  border solid 2px violet
+  box-sizing border-box
   font-size 15px
   font-weight 600
-  padding 12px 28px
+  margin 10px
+  padding 10px 26px
   transition background 300ms ease
 
 .button_buy:hover
-  background green
+  background transparent
+
+@media (min-width: tablet)
+  .button_buy
+    margin 0 10px

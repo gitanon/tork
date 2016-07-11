@@ -1,3 +1,41 @@
 .form
   position relative
-  width 262px
+
+.input_search
+  background dark_1
+  border none
+  border-radius 22px
+  color grey
+  font-family font_opensans
+  font-size 14px
+  font-weight 400
+  padding 12px 0 13px 30px
+
+.button_search
+  background dark_1
+  border none
+  cursor pointer
+  padding 22px
+  position absolute
+  right 0
+  top 0
+
+.icon_button-search
+  sprite($sprite_search)
+  background-repeat no-repeat
+
+// .button_search:after,
+// .button_search::after
+//   sprite($sprite_search)
+//   background-repeat no-repeat
+//   position absolute
+//   top 0%
+//   left 0%
+
+@media (min-width: tablet)
+  .form
+    margin 0 10px
+    width 262px
+  
+  .input_search
+    padding 12px 50px 13px 30px

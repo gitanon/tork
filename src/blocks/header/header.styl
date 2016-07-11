@@ -1,43 +1,20 @@
 .header
-  background: dark url(../img/header-bg.png) no-repeat
-  background-size: cover
+  background dark url(../img/header-bg.png) no-repeat
+  background-size cover
 
 .logo
-  // margin: 10px 0 0 0
-  // padding: 13px 20px 7px
+  margin 10px
 
 .menu
-  align-items: center
-  background: transparent
-  display: flex
-  margin: 10px 0 0 0
-  position: relative
+  align-items center
+  display flex
+  margin 10px
+  position relative
 
 .trigger
   sprite($sprite_bars)
-  align-self: center
-  display: flex
-  float: right
-  z-index: 0
+  cursor pointer
 
-.trigger:active + .list_header
-  position: static
-  overflow: visible
-  z-index: 1
-
-// @media (min-width: tablet)
-//   .logo
-//     margin: 60px 0 0 0
-//     padding: 13px 20px 7px
-
-//   .menu
-//     margin: 60px 0 0 0
-
-// @media (min-width: screen)
-//   .logo
-//     font: 700 60px/1 font_firasans
-//     margin: 80px 0 0 0
-//     padding: 13px 20px 7px
-
-//   .menu
-//     margin: 80px 0 0 0
+@media (min-width: screen)
+  .logo
+    margin 50px
