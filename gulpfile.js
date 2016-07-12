@@ -62,8 +62,8 @@ gulp.task('clean:sprite', function() {
 })
 
 gulp.task('develop', ['browserSync'], function () {
-  gulp.watch(['src/**/*.{png,jpg}', '!src/**/sprite*.{png,jpg}'], ['images', reload]);
   gulp.watch('src/**/sprite*.png', ['sprite', reload]);
+  gulp.watch(['src/**/*.{png,jpg}', '!src/**/sprite*.{png,jpg}'], ['images', reload]);
   gulp.watch('src/**/*.pug', ['pug', reload]);
   gulp.watch('src/**/*.styl', ['stylus', reload]);
 });
