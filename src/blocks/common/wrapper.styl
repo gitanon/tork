@@ -4,9 +4,19 @@
   flex-flow row nowrap
   justify-content space-between
 
+.wrapper_text
+  display flex
+  flex-flow column wrap
+
 @media (min-width: tablet)
   .wrapper_header
     align-items center
+
+@media (min-width: screen)
+  .wrapper_text
+    display flex
+    flex-flow row nowrap
+    justify-content space-between
 
 @media (min-width: screen_large)
   .wrapper

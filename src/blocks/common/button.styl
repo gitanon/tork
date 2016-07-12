@@ -16,7 +16,8 @@
 .button_buy:hover
   background transparent
 
-.button_screens
+.button_screens,
+.button_text
   background green
   border solid 2px green
   box-sizing border-box
@@ -30,14 +31,21 @@
 .button_screens:hover
   background transparent
 
+.button_text:hover
+  background transparent
+  color green
+
 @media (min-width: tablet)
   .button_buy
     margin 0 10px
   
-  .button_screens
+  .button_screens,
+  .button_text
     margin 10px 75px 10px 75px
 
 @media (min-width: screen) 
   .button_screens
-    margin 10px 300px 200px 100px
-    
+    margin 10px 300px 200px 10px
+  
+  .button_text
+    margin 10px 10px 100px 10px
