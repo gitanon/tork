@@ -6,3 +6,5 @@
 * Build system - [Gulp](http://gulpjs.com/)
 * CSS preprocessor - [Stylus](http://stylus-lang.com/)
 * HTML preprocessor - [Pug](http://jade-lang.com/)
+
+Нахуй этот макет, он заебал. Начиная с нового галпфайла пошла ебала, потом макет уебашный с хуй просы какой сеткой, блять, даже слов нет все описать. Иди в пизду!
