@@ -8,6 +8,7 @@ var gulp = require('gulp');
 var reload = browserSync.reload;
 var spritesmith = require('gulp.spritesmith');
 var dirSep = require('path').sep;
+var watch = require('gulp-watch');
 
 // Develop
 // _______
@@ -48,7 +49,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('sprite', ['clean:sprite'], function () {
-  var spriteData = gulp.src('src/**/sprite*.png').pipe(spritesmith({
+  var spriteData = gulp.src('src/**/sprite*.{png,jpg}').pipe(spritesmith({
     imgName: 'sprite.png',
     cssName: 'sprite.styl',
     imgPath: '../img/sprite.png'
@@ -62,8 +63,8 @@ gulp.task('clean:sprite', function() {
 })
 
 gulp.task('develop', ['browserSync'], function () {
-  gulp.watch('src/**/sprite*.png', ['sprite', reload]);
   gulp.watch(['src/**/*.{png,jpg}', '!src/**/sprite*.{png,jpg}'], ['images', reload]);
+  gulp.watch('src/**/sprite*.{png,jpg}', ['sprite', reload]);
   gulp.watch('src/**/*.pug', ['pug', reload]);
   gulp.watch('src/**/*.styl', ['stylus', reload]);
 });

@@ -3,18 +3,22 @@
 
 .conectivity_text
   grid-2()
-  background: grey_11
+  background grey_11
+  box-sizing border-box
 
 .conectivity_span
   sprite($sprite_conectivity)
 
 .conectivity_image
   grid-2()
-  width: 100%
+  width 100%
 
 @media (min-width: tablet)
   .conectivity
     grid()
+  
+  .conectivity_text
+    padding 20px 0 20px 10px
 
 // @media (min-width: tablet)
 //   .text
@@ -25,11 +29,11 @@
   //   padding: 50px 36px
 
   .conectivity_text
-    padding: 50px 10px 50px 10px
+    padding 50px 10px 50px 10px
 
 @media (min-width: screen_large)
   // .text
   //   padding: 100px 50px
 
   .conectivity_text
-    padding: 100px 50px 100px 250px
+    padding 100px 50px 100px 250px

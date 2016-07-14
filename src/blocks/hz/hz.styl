@@ -1,0 +1,79 @@
+.hz
+  background grey_3
+
+.hz_image
+  grid-2()
+
+.hz_image-full
+  grid-4()
+
+.hz_news,
+.hz_post
+  grid-2()
+  box-sizing border-box
+  padding 10px
+
+.hz_news
+  background violet
+
+.hz_post
+  background white
+  
+.hz_quote
+  background violet
+  box-sizing border-box
+  position absolute
+  left 0
+  width 50%
+
+.hz_date
+  color white
+  font-family font_opensans
+  font-size 12px
+  font-style italic
+  padding 10px 0
+
+.author
+  color white
+  font-family font_opensans
+  font-size 15px
+  font-weight 400
+  padding 20px 0
+
+.hz_photo
+  sprite($sprite_avatar)
+
+.hz_comments
+  color grey_8
+  font-family font_opensans
+  font-size 12px
+  font-weight 600
+  text-decoration none
+
+.number
+  color grey_8
+  font-family font_opensans
+  font-size 30px
+  font-weight 300
+
+@media (min-width: tablet)
+  .hz_news
+    padding 20px 10px 20px 0
+
+  .hz_post,
+  .hz_quote
+    padding 20px 0 20px 10px
+
+@media (min-width: screen)
+  .hz_news, 
+  .hz_post,
+  .hz_quote
+    padding 50px 10px 50px 10px
+
+@media (min-width: screen_large)
+  .hz_news
+    padding 100px 250px 100px 50px
+    
+  .hz_post,
+  .hz_quote
+    padding 100px 50px 100px 250px
